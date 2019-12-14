@@ -9,7 +9,7 @@ $(document).ready(function () {
 
         // this takes in the city name for the search
         var searchValue = $('#search-value').val();
-
+        
         // this is the url used to make the request
         var weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&units=imperial&appid=" + APIKey;
 
@@ -20,11 +20,11 @@ $(document).ready(function () {
             console.log(response);
             console.log(weatherUrl)
             console.log(response.name)
-            $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-            $(".temp").text("Temperature " + response.main.temp + " (F)");
+            $(".city").html("<h1>" + response.name + " Weather Details on " + (moment().format('MMM Do')) + "</h1>");
+            $(".temp").text("Temperature: " + response.main.temp + " (F)");
             $(".humid").text("Humidity: " + response.main.humidity);
             $(".wind").text("Wind Speed: " + response.wind.speed + " MPH");
-            $(".uv").text("UV Index: " + response.main.)
+            // $(".uv").text("UV Index: " + response.main.)
         });
 
     })
