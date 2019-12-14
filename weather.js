@@ -1,31 +1,17 @@
 $(document).ready(function () {
 
     // This is our API key
-
-
-    // Here we are building the URL we need to query the database
-
-    // var searchValue = $('#search-value').val()
-    // var searchValue = document.getElementById("#searchValue")
-    // console.log(searchValue);
     var APIKey = "1d6d7d616cf0e8e67fe23fcb5edfbdb5";
-    
+    // this button makes the api call
     $("#search-button").on("click", function (event) {
-
-        // event.preventDefault() can be used to prevent an event's default behavior.
-        // Here, it prevents the submit button from trying to submit a form when clicked
+        // event.preventDefault() can be used to prevent an event's default behavior. Not really sure I need this.
         event.preventDefault();
+
+        // this takes in the city name for the search
         var searchValue = $('#search-value').val();
+
+        // this is the url used to make the request
         var weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&units=imperial&appid=" + APIKey;
-
-
-        // Here we construct our URL
-        // var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
-
-        // Write code between the dashes below to hit the queryURL with $ajax, then take the response data
-        // and display it in the div with an id of movie-view
-
-        // ------YOUR CODE GOES IN THESE DASHES. DO NOT MANUALLY EDIT THE HTML ABOVE.
 
         $.ajax({
             url: weatherUrl,
@@ -33,6 +19,12 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
             console.log(weatherUrl)
+            console.log(response.name)
+            $(".city").html("<h1>" + response.name + " Weather Details</h1>");
+            $(".temp").text("Temperature " + response.main.temp + " (F)");
+            $(".humid").text("Humidity: " + response.main.humidity);
+            $(".wind").text("Wind Speed: " + response.wind.speed + " MPH");
+            $(".uv").text("UV Index: " + response.main.)
         });
 
     })
