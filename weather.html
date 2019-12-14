@@ -8,20 +8,37 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="weather.css">
-    <title>Document</title>
+    <title>Weather</title>
 </head>
 
 <body>
+    <br>
+    <br>
     <div class="container">
         <div class="row">
-            <div class="col-3">colomun</div>
-            <div class="col-9">colomun</div>
+            <div class="col-3">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="search-value" placeholder="City">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-primary" id="search-value">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9 weather">
+                <h1>City/Date</h1>
+                <br>
+                <p>Temperature:</p>
+                <p>Humidity:</p>
+                <p>Wind Speed:</p>
+                <p>UV Index:</p>
+            </div>
         </div>
 
 
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="weather.js"></script>
 </body>
 
